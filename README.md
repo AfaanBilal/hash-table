@@ -68,6 +68,19 @@ Remove an item:
 HashTable_remove(ht, "key");
 ```
 
+HashTable will automatically resize based upon load (`<0.1` to resize down with a minimum size of `50`, `>0.7` to resize up).
+
+However, you may create a sized table directly if you know how many items you'll be storing beforehand with:
+```c
+HashTable *ht = HashTable_new_sized(100); // Creates a hash table with base size 100 (actual size will be a prime number >= 100)
+```
+
+You may also manually resize the table up / down by:
+```c
+HashTable_resize_up(ht); // New size is roughly double the current size
+HashTable_resize_down(ht); // New size is roughly half the current size (unless size is already minimum)
+```
+
 ---
 
 ## Contributing
