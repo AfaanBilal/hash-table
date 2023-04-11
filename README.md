@@ -72,13 +72,17 @@ HashTable will automatically resize based upon load (`<0.1` to resize down with 
 
 However, you may create a sized table directly if you know how many items you'll be storing beforehand with:
 ```c
-HashTable *ht = HashTable_new_sized(100); // Creates a hash table with base size 100 (actual size will be a prime number >= 100)
+// Creates a hash table with base size 100 (actual size will be a prime number >= 100)
+HashTable *ht = HashTable_new_sized(100);
 ```
 
 You may also manually resize the table up / down by:
 ```c
-HashTable_resize_up(ht); // New size is roughly double the current size
-HashTable_resize_down(ht); // New size is roughly half the current size (unless size is already minimum)
+// Resize to roughly double the current size
+HashTable_resize_up(ht);
+
+// Resize to roughly half the current size (unless size is already minimum)
+HashTable_resize_down(ht);
 ```
 
 ---
