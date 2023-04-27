@@ -12,7 +12,7 @@ A Hash Table implementation in C.
 ## Compile &amp; Run
 
 ```bash
-gcc src/ht/* src/main.c -o main && ./main
+gcc src/ht/*.c src/main.c -o main && ./main
 ```
 
 Output:
